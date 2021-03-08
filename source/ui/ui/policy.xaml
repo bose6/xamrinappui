@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ui.policy"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout  BackgroundColor="White" >
+        <StackLayout BackgroundColor="white">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="80*" />
+                    <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <ImageButton Source="back.png" Grid.Column="0"  HeightRequest="10" WidthRequest="10" BackgroundColor="white"  Clicked="Button_back"/>
+
+                <Button Text=": :" Grid.Column="2" BackgroundColor="white"/>
+            </Grid>
+        </StackLayout>
+        <ScrollView BackgroundColor="White">
+            
+                <Expander >
+                    <Expander.Header>
+
+                        <Grid>
+
+                            <Image Source="cert.png" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Margin="10"/>
+                            <Label Text=" Active Policy"  TextColor="Black" FontSize="25" FontFamily="roboto"  Margin="50,0,0,0" VerticalTextAlignment="Center"/>
+                            <Image Source="up.png"
+                            HorizontalOptions="End"
+                   VerticalOptions="Start">
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image"
+                                 Binding="{Binding Source={RelativeSource AncestorType={x:Type Expander}}, Path=IsExpanded}"
+                                 Value="True">
+                                        <Setter Property="Source"
+                                Value="down.png" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                        </Grid>
+
+                    </Expander.Header>
+                    <Expander.ContentTemplate>
+                        <DataTemplate>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+
+                                </Grid.RowDefinitions>
+
+                                <Label Text="View Policy List" TextColor="Black"  FontSize="15" FontFamily="roboto" Grid.Row="0" Margin="30,0,0,0"/>
+                                <Image Source="sub.png" HorizontalOptions="End" HeightRequest="30" WidthRequest="30"  Grid.Row="0"/>
+
+                                <Label Text="Download policy schedule" TextColor="Black"  FontSize="15" FontFamily="roboto" Grid.Row="1" Margin="30,0,0,0"/>
+                                <Image Source="sub" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Grid.Row="1"/>
+
+                                <Label Text="View premium receipt" TextColor="Black"  FontSize="15" FontFamily="roboto" Grid.Row="2" Margin="30,0,0,0"/>
+                                <Image Source="sub" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Grid.Row="2"/>
+
+                                <Label Text="View Product benefets" TextColor="Black"  FontSize="15" FontFamily="roboto" Grid.Row="3" Margin="30,0,0,0"/>
+                                <Image Source="sub" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Grid.Row="3"/>
+
+                                <Label Text="Surrendering policy " TextColor="Black"  FontSize="15" FontFamily="roboto" Grid.Row="4" Margin="30,0,0,0"/>
+                                <Image Source="sub" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Grid.Row="4"/>
+
+                                <Label Text="Mail me policy" TextColor="Black"  FontSize="15" FontFamily="roboto" Grid.Row="5" Margin="30,0,0,0"/>
+                                <Image Source="sub" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Grid.Row="5"/>
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </Expander.ContentTemplate>
+                </Expander>
+            
+
+        </ScrollView>
+
+        <StackLayout Background="transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="policychange.png" Grid.Row="0"  HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Margin="8"/>
+                <Label Text=" Policy Changes"   Grid.Row="0"  Background="transparent" TextColor="Black" FontSize="25" FontFamily="roboto"  Margin="48,0,0,0" VerticalTextAlignment="Center"/>
+                    <Image Source="up.png"  Grid.Row="0" HorizontalOptions="End" />
+
+
+            </Grid>
+
+        </StackLayout>
+        <StackLayout Background="transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="time.png" Grid.Row="0" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Margin="7"/>
+                <Label Text="Lapsed policy"  Grid.Row="0"  Background="transparent" TextColor="Black" FontSize="25" FontFamily="roboto"  Margin="50,0,0,0" VerticalTextAlignment="Center"/>
+                <Image Source="up.png" HorizontalOptions="End"  Grid.Row="0"/>
+
+            </Grid>
+        </StackLayout>
+        <StackLayout Background="transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Image Source="give.png" Grid.Row="0" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Margin="10"/>
+                <Label Text="Payments"  Grid.Row="0"   Background="transparent" TextColor="Black" FontSize="25" FontFamily="roboto"  Margin="50,0,0,0" VerticalTextAlignment="Center"/>
+                <Image Source="up.png" HorizontalOptions="End" Grid.Row="0"/>
+            </Grid>
+        </StackLayout>
+
+
+
+
+    </StackLayout>
+</ContentPage>
